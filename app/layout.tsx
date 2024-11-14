@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { ThemeProvider } from '@/components/theme-provider';
 import localFont from 'next/font/local';
 import './globals.css';
 
@@ -14,12 +15,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Cnel Outage Schedule',
-  description: 'Pagina de consulta de interrupciones de servicio de CNEL',
-  authors: [
-    { name: 'Cnel', url: 'https://www.cnelep.gob.ec/' },
-    { name: 'Savecoders', url: 'https://github.com/savecoders' },
-  ],
+  title: 'Title placeholder',
+  description: 'Description placeholder',
+  authors: [{ name: 'Author placeholder', url: 'https://github.com/' }],
 };
 
 export default function RootLayout({
@@ -28,8 +26,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
