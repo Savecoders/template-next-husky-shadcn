@@ -34,6 +34,8 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@commitlint/types": "^19.5.0",
+    "@eslint/eslintrc": "^3.3.0",
+    "@next/eslint-plugin-next": "^15.2.0",
     "@tailwindcss/postcss": "^4.0.9",
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
